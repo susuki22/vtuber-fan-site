@@ -23,10 +23,10 @@ vtuberの配信の感想を共有したいときや、他の方の感想を見�
 
 
 ## チャレンジ要素一覧
-
+https://docs.google.com/spreadsheets/d/1vHWk9LhxZLW9tgFQ2zLvqIAFGTMB8M18mszJHSXJB8Q/edit?usp=sharing
 
 ## 開発環境
-・　OS：Linux(centOS)
-・　言語：HTML,CSS,Ruby,SQL
-・　フレームワーク：Ruby on Rails
-・　IDE：Cloud9
+- OS：Linux(centOS)
+- 言語：HTML,CSS,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- IDE：Cloud9
