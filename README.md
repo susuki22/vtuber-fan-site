@@ -1,4 +1,4 @@
-# vtuber fansite
+# vtuber fan-site
 
 ## サイト概要
 vtuberの配信やライブの感想を共有できるサイト
