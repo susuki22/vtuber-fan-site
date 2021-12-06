@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
-  get 'favorites/create'
-  get 'favorites/destroy'
-  get 'tweet_comments/show'
-  get 'tweet_comments/create'
-  get 'tweet_comments/destroy'
-  get 'tweets/index'
-  get 'tweets/new'
-  get 'tweets/create'
-  get 'tweets/destroy'
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
+
   devise_for :users
+  root to: 'homes#top'
+  get 'homes/about' => 'homes#about'
+  resources :users, only: [:index, :show, :edit, :update]
+  resources :tweets, only: [:index, :new, :create, :destroy]
+  resources :tweet_comments, only: [:show, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
