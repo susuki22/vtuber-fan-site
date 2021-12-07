@@ -12,6 +12,9 @@
   <body>
     <% if user_signed_in? %>
       <li>
+        <%= link_to 'ツイート', new_tweet_path %>
+      </li>
+      <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
@@ -22,8 +25,8 @@
         <%= link_to "ログイン", new_user_session_path %>
       </li>
     <% end %>
-  
+
     <%= yield %>
   </body>
-  
+
 </html>
