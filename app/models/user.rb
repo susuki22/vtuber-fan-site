@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :tweets, dependent: :destroy
   has_many :tweet_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  attachment :profile_image
 end
