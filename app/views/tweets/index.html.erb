@@ -5,6 +5,7 @@
     <% end %>
     <p>ユーザーネーム：<%= tweet.user.name %></p>
     <p>ツイート：<%= tweet.tweet_text%></p>
+    <p><%= link_to "#{tweet.tweet_comments.count} コメント", tweet_path(tweet.id) %></p>
     <p><%= link_to "削除", tweet_path(tweet), method: :delete %></p>
   </div>
 <% end %>
