@@ -25,6 +25,12 @@ class TweetsController < ApplicationController
     redirect_to tweets_path
   end
 
+  def search
+    @tweets = Tweet.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
 
   def tweet_params

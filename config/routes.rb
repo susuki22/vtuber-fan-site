@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
   get 'homes/about' => 'homes#about'
+  get 'search' => 'tweets#search'
   resources :users, only: [:index, :show, :edit, :update]
   resources :tweets, only: [:index, :show, :new, :create, :destroy] do
     resources :tweet_comments, only: [:create, :destroy]
