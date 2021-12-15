@@ -21,7 +21,10 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to 'ツイート', new_tweet_path, class: 'nav-link text-dark' %>
+                <%= link_to 'ツイート一覧', tweets_path, class: 'nav-link text-dark' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'ツイート投稿', new_tweet_path, class: 'nav-link text-dark' %>
               </li>
               <li class="nav-item">
                 <%= link_to "ユーザー", users_path, class: 'nav-link text-dark' %>
