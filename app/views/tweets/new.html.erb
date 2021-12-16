@@ -1,13 +1,17 @@
 <div class='container'>
   <div class='row'>
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <div class="col-lg-5 mt-5 px-sm-0 mx-auto">
       <h1>ツイート投稿フォーム</h1>
       <%= form_with model: @tweet, local:true do |f| %>
-        <h4>ツイート文</h4>
-        <%= f.text_area :tweet_text %>
-        <h4>投稿画像</h4>
-        <%= f.attachment_field :image %>
-        <%= f.submit '投稿' %>
+        <div class="form-group mt-3">
+          <h4>ツイート文</h4>
+          <%= f.text_area :tweet_text %>
+        </div>
+        <div class="form-group mt-4">
+          <h4>投稿画像</h4>
+          <%= f.attachment_field :image %>
+          <%= f.submit '投稿', class: 'btn btn-success'  %>
+        </div>
       <% end %>
     </div>
   </div>
