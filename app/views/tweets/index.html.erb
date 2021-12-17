@@ -9,7 +9,7 @@
       </div>
       <% @tweets.each do |tweet| %>
         <div class="border border-primary rounded-lg mt-4" style="padding:10px;">
-          <div><%= attachment_image_tag @user, :profile_image, :fill,100,100 ,fallback: "no_image.jpg", class: "rounded-circle" %></div>
+          <div><%= attachment_image_tag tweet.user, :profile_image, :fill,100,100 ,fallback: "no_image.jpg", class: "rounded-circle" %></div>
           <p><%= tweet.user.name %></p>
           <p><%= tweet.tweet_text%></p>
           <div>
