@@ -1,4 +1,4 @@
-<div class='container-fluid'>
+<div class='container'>
   <div class='row mt-4 mb-2'>
     <div class='col'>
       <div class="search-form">
@@ -8,9 +8,11 @@
         <% end %>
       </div>
       <% @tweets.each do |tweet| %>
-        <div class="border border-primary rounded-lg mt-4" style="padding:10px;">
+        <div class='col-xs-4 mt-4'>
           <div><%= attachment_image_tag tweet.user, :profile_image, :fill,100,100 ,fallback: "no_image.jpg", class: "rounded-circle" %></div>
           <p><%= tweet.user.name %></p>
+        </div>
+        <div class="col-xs-8 offset-md-1 border border-primary rounded-lg" style="padding:10px;">
           <p><%= tweet.tweet_text%></p>
           <div>
             <%= link_to tweet_path(tweet.id) do %>
