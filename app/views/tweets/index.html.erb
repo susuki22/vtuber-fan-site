@@ -1,24 +1,30 @@
 <div class='container'>
   <div class='row mt-4 mb-2'>
-    <div class='col'>
-      <div class="search-form">
-        <%= form_with url: search_path, method: :get, local: true do |f| %>
-          <%= f.text_field :keyword, value: @keyword %>
-          <%= f.submit "検索" %>
-        <% end %>
+    <div class="search-form">
+      <%= form_with url: search_path, method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, value: @keyword %>
+        <%= f.submit "検索" %>
+      <% end %>
+    </div>
+  </div>
+  <div class='row mt-4 mb-2'>
+    <% @tweets.each do |tweet| %>
+      <div class='col-md-2'>
+        <div><%= attachment_image_tag tweet.user, :profile_image, :fill,90,90 ,fallback: "no_image.jpg", class: "rounded-circle" %></div>
+        <div><%= tweet.user.name %></div>
       </div>
-      <% @tweets.each do |tweet| %>
-        <div class='col-xs-4 mt-4'>
-          <p><%= tweet.user.name %></p>
-          <div><%= attachment_image_tag tweet.user, :profile_image, :fill,90,90 ,fallback: "no_image.jpg", class: "rounded-circle" %></div>
+      <div class="col-md-10 mt-5 border border-primary rounded-bottom rounded-right" style="padding:10px;">
+        <div class="col-md-8">
+          <%= tweet.tweet_text%><br>
+          <%= link_to tweet_path(tweet.id) do %>
+            <%= attachment_image_tag tweet, :image, :fill,100,100 %>
+          <% end %>
         </div>
-        <div class="col-xs-8 offset-md-1 border border-primary rounded-bottom rounded-right" style="padding:10px;">
-          <p><%= tweet.tweet_text%></p>
-          <div>
-            <%= link_to tweet_path(tweet.id) do %>
-              <%= attachment_image_tag tweet, :image, :fill,100,100 %>
-            <% end %>
+        <div class="row">
+          <div class="col-md-2">
             <p><%= link_to "#{tweet.tweet_comments.count} コメント", tweet_path(tweet.id) %></p>
+          </div>
+          <div class="col-md-2">
             <% if tweet.favorited_by?(current_user) %>
               <p>
                 <%= link_to tweet_favorites_path(tweet), method: :delete do %>
@@ -32,11 +38,15 @@
                 <% end %>
               </p>
             <% end %>
-            <p><%= link_to "削除", tweet_path(tweet), method: :delete %></p>
-            <p><%= tweet.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
           </div>
         </div>
-      <% end %>
-    </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p><%= tweet.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
+            <p><%= link_to "削除", tweet_path(tweet), method: :delete %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
