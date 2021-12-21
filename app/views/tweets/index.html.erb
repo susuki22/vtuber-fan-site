@@ -21,7 +21,7 @@
           <% end %>
         </div>
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-2 mt-2">
             <p><%= link_to "#{tweet.tweet_comments.count} コメント", tweet_path(tweet.id) %></p>
           </div>
           <div class="col-md-2">
@@ -42,8 +42,8 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <p><%= tweet.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
-            <p><%= link_to "削除", tweet_path(tweet), method: :delete %></p>
+            <div><%= tweet.created_at.strftime('%Y/%m/%d %H:%M:%S') %></div>
+            <div><%= link_to "削除", tweet_path(tweet), method: :delete %></div>
           </div>
         </div>
       </div>
