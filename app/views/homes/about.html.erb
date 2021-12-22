@@ -1,1 +1,28 @@
-サイトの説明を後日記入
+<div class="container-fluid">
+  <div class="row align-items-center" style="height:200px">
+    <div class="col no-gutters col mt-5">
+      <div class="col-10 mx-auto">
+        <div style="background-color:rgba(255,255,255,0.75);">
+          <h1>このサイトはvtuberが好きな人が配信やライブを見て、<br>情報や感想を共有したり、他の人の感想などを見るサイトです。</h1>
+        </div>
+        <div class="mt-3">
+          <div style="background-color:rgba(255,255,255,0.75);">
+            <h2>注意事項</h2>
+            <h3>・配信者のことを悪く表現するようなツイートはご遠慮ください。</h3>
+            <h3>・センシティブな内容や、過激すぎる内容のツイートはお控えください。</h3>
+            <h3>・ツイートに対して、マイナスとなる表現のコメントはお控えください。</h3>
+            <h3>・同じ趣味を持つファン同士仲良く、楽しく活用してください。</h3>
+          </div>
+        </div>
+        <div class="btn-wrapper col-4 mt-5 mx-auto">
+          <div class="row mt-3">
+            <%= link_to 'ログイン',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+          </div>
+          <div class="row mt-3">
+            <%= link_to '新規登録',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
