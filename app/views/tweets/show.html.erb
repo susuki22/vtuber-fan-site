@@ -6,19 +6,9 @@
         <p><%= attachment_image_tag @tweet, :image, :fill,200,200 %></p>
         <p>ユーザーネーム：<%= @tweet.user.name %></p>
         <p>投稿日時：<%= @tweet.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
-        <% if @tweet.favorited_by?(current_user) %>
-          <p>
-            <%= link_to tweet_favorites_path(@tweet), method: :delete do %>
-              ♥<%= @tweet.favorites.count %> いいね
-            <% end %>
-          </p>
-          <% else %>
-          <p>
-            <%= link_to tweet_favorites_path(@tweet), method: :post do %>
-              ♡<%= @tweet.favorites.count %> いいね
-            <% end %>
-          </p>
-        <% end %>
+        <div id="favorite_buttons_<%= @tweet.id %>">
+          <%= render "favorites/favorite", tweet: @tweet %>
+        </div>
         <p>コメント件数：<%= @tweet.tweet_comments.count %></p>
       </div>
       <% @tweet.tweet_comments.each do |tweet_comment| %>
