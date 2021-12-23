@@ -1,10 +1,11 @@
-<div class="col-md-8 offset-md-1 mt-4">
+<div class="col-md-10 offset-md-1 mt-4">
   <h2>ユーザー一覧</h2>
   <table class="table">
     <thead>
       <tr>
         <th></th>
         <th>名前</th>
+        <th>推し</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -18,6 +19,9 @@
           <td><%= link_to user_path(user.id) do %>
             <%= user.name %>
             <% end %>
+          </td>
+          <td>
+            <%= user.fan_name %>
           </td>
         </tr>
       <% end %>

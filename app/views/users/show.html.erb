@@ -1,13 +1,26 @@
 <div class='container px-5 px-sm-0'>
   <div class='row mt-4 mb-2'>
-    <div class='col-md-8'>
-      <div>
-        <h3><%= @user.name %></h3>
-        <%= attachment_image_tag @user, :profile_image, :fill,100,100 ,fallback: "no_image.jpg", class: "rounded-circle" %>
-        <% if @user.id == current_user.id %>
-          <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-        <% end %>
-      </div>
+    <div class='col-md-3'>
+      <table class='table'>
+        <tr><%= attachment_image_tag @user, :profile_image, :fill,100,100 ,fallback: "no_image.jpg", class: "rounded-circle" %></tr>
+        <tr>
+          <th>名前</th>
+          <th><%= @user.name %></th>
+        </tr>
+        <tr>
+          <th>推しの名前</th>
+          <th><%= @user.fan_name %></th>
+        </tr>
+        <tr>
+          <th>
+            <% if @user.id == current_user.id %>
+              <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+            <% end %>
+          </th>
+        </tr>
+      </table>
+    </div>
+    <div class='col-md-8 offset-md-1'>
       <% @tweets.each do |tweet| %>
       <div class="border border-primary rounded-lg mt-4" style="padding:10px;">
         <p></p>
