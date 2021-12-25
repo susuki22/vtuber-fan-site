@@ -10,7 +10,7 @@
   <div class='row mt-4 mb-2'>
     <% @tweets.each do |tweet| %>
       <div class='col-md-2'>
-        <div><%= attachment_image_tag tweet.user, :profile_image, :fill,90,90 ,fallback: "no_image.jpg", class: "rounded-circle" %></div>
+        <div><%= attachment_image_tag tweet.user, :profile_image, :fill,90,90 ,fallback: "no_image.jpg", size: '90x90', class: "rounded-circle" %></div>
         <div><%= tweet.user.name %></div>
       </div>
       <div class="col-md-10 mt-5 border border-primary rounded-bottom rounded-right" style="padding:10px;">
