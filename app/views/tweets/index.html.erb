@@ -24,7 +24,7 @@
           <div class="col-md-2 mt-2">
             <p><%= link_to "#{tweet.tweet_comments.count} コメント", tweet_path(tweet.id) %></p>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-2 mt-2">
             <div id="favorite_buttons_<%= tweet.id %>">
               <%= render "favorites/favorite", tweet: tweet %>
             </div>
