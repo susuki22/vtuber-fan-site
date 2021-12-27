@@ -32,7 +32,7 @@
       <div class="border border-primary rounded-lg mt-4" style="padding:10px;">
         <p></p>
         <p>ツイート：<%= tweet.tweet_text%></p>
-        <p><%= attachment_image_tag tweet, :image %></p>
+        <p><%= attachment_image_tag tweet, :image, :fill,100,100 %></p>
         <p><%= tweet.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
       </div>
       <% end %>
