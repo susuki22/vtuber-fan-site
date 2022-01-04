@@ -3,7 +3,6 @@ class Tweet < ApplicationRecord
   has_many :tweet_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   attachment :image
-
   validates :tweet_text, presence: true
 
   def favorited_by?(user)
